@@ -1,14 +1,14 @@
 // Place url in a constant variable
 const url = "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json" 
   
-// Fetch the JSON data and console log it
+// Fetch the JSON data
 d3.json(url).then(function(data) {
   console.log(data);
 });
 // Initializer
 function init() {
 
-    // Use D3 to select the dropdown menu
+    // Use D3 to Load data
     let dropdownMenu = d3.select("#selDataset");
 
     // Use D3 to get sample names and populate the drop-down selector
@@ -17,32 +17,28 @@ function init() {
         // Set a variable for the sample names
         let names = data.names;
 
-        // Add  samples to dropdown menu
+        // Populate the dropdown menu
         names.forEach((id) => {
 
-            // Log the value of id for each iteration of the loop
             console.log(id);
 
-            dropdownMenu.append("option")
-            .text(id)
-            .property("value",id);
+            dropdownMenu.append("option").text(id).property("value",id);
         });
 
         // Set the first sample from the list
         let instance = names[0];
-
+        console.log(instance);
         // Build the initial plots
         buildDemographicInfo(instance);
         buildBarPlot(instance);
         buildBubbleChart(instance);
-
     });
 };
 
 // Function that populates metadata info
 function buildDemographicInfo(sample) {
 
-    // Use D3 to retrieve all of the data
+    // Use D3 to Load data
     d3.json(url).then((data) => {
 
         // Retrieve metadata
@@ -75,7 +71,7 @@ function buildDemographicInfo(sample) {
 // Function that builds the bar chart
 function buildBarPlot(sample) {
 
-    // Use D3 to retrieve all of the data
+    // Use D3 to Load data
     d3.json(url).then((data) => {
 
         // Retrieve all sample data
@@ -120,13 +116,12 @@ function buildBarPlot(sample) {
 // Function that builds the bubble chart
 function buildBubbleChart(sample) {
 
-    // Use D3 to retrieve all of the data
+    // Use D3 to Load data
     d3.json(url).then((data) => {
         
-        // Retrieve all sample data
         let sampleInfo = data.samples;
 
-        // Filter based on the value of the sample
+        // Filter on the value of the sample
         let value = sampleInfo.filter(result => result.id == sample);
 
         // Get the first index from the array
@@ -150,14 +145,13 @@ function buildBubbleChart(sample) {
             }
         };
 
-        // Set up the layout
         let layout = {
             title: "Bacteria Per Sample",
             hovermode: "closest",
             xaxis: {title: "OTU ID"},
         };
 
-        // Call Plotly to plot the bubble chart
+        // Plot the bubble chart
         Plotly.newPlot("bubble", [trace1], layout)
     });
 };
@@ -168,11 +162,11 @@ function UpdateValue(value) {
     // Log the new value
     console.log(value); 
 
-    // Call all functions 
+    // Call Fns with new value
     buildDemographicInfo(value);
-    buildBarChart(value);
+    buildBarPlot(value);
     buildBubbleChart(value);
 };
 
-// Call the initialize function
+// Initialize function
 init();
