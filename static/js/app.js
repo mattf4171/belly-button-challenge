@@ -92,15 +92,13 @@ function buildBarPlot(sample) {
         let otu_labels = valueData.otu_labels;
         let sample_values = valueData.sample_values;
 
-        // Log the data to the console
-        console.log(otu_ids,otu_labels,sample_values);
 
         // Set top ten items to display in descending order
-        let yticks = otu_ids.slice(0,10).map(id => `OTU ${id}`).reverse();
         let xticks = sample_values.slice(0,10).reverse();
+        let yticks = otu_ids.slice(0,10).map(id => `OTU ${id}`).reverse();
         let labels = otu_labels.slice(0,10).reverse();
         
-        // assign the orientation specs of bar plot
+        // Assign the orientation specs of bar plot
         let trace = {
             x: xticks,
             y: yticks,
@@ -138,11 +136,8 @@ function buildBubbleChart(sample) {
         let otu_ids = valueData.otu_ids;
         let otu_labels = valueData.otu_labels;
         let sample_values = valueData.sample_values;
-
-        // Log the data to the console
-        console.log(otu_ids,otu_labels,sample_values);
         
-        // Set up the trace for bubble chart
+        // Trace for bubble chart
         let trace1 = {
             x: otu_ids,
             y: sample_values,
@@ -167,8 +162,8 @@ function buildBubbleChart(sample) {
     });
 };
 
-// Function that updates dashboard when sample is changed
-function optionChanged(value) { 
+// Update DemographicInfo when dropdown changed
+function UpdateValue(value) { 
 
     // Log the new value
     console.log(value); 
