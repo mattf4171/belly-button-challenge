@@ -7,4 +7,17 @@ an interactive dashboard to explore the Belly Button Biodiversity dataset, which
 ### prerequisites
 + D3
 + Plotly
-+ 
++ Javascript
+
+<br>
+## Horizontal bar chart with a dropdown menu to display the top 10 OTUs found in that in individual.
+<img src="Images/barPlotIMG.png" alt='barplot of '/>
+
+## Bubble chart that displays each sample.
+<img src="Images/bubblePlotIMG.png" alt='Bubble plot using plotly'/>
+
+## Key-value pair from the metadata JSON object somewhere on the page.
+<img src="Images/demographicInfoIMG.png" alt='Demographic Info image'/>
+
+### References
+Hulcr, J. et al. (2012) A Jungle in There: Bacteria in Belly Buttons are Highly Diverse, but Predictable. Retrieved from: <a href='http://robdunnlab.com/projects/belly-button-biodiversity/results-and-data/'>http://robdunnlab.com/projects/belly-button-biodiversity/results-and-data/</a>
