@@ -7,5 +7,5 @@
 .col-md-12.jumbotron{
     background-image: url('https://img.freepik.com/free-photo/microscopic-germs-pathogens_23-2149005130.jpg');
     background-size: cover;
-    color:red;
+    color: rgb(220, 71, 71);
 }
