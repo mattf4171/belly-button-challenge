@@ -1,0 +1,11 @@
+
+.backgroundIMG {
+    background-image: url('https://customsitesmedia.usc.edu/wp-content/uploads/sites/59/2018/02/16064000/HarmfulBacteria_web.jpg');
+    background-size: cover;
+}
+
+.col-md-12.jumbotron{
+    background-image: url('https://img.freepik.com/free-photo/microscopic-germs-pathogens_23-2149005130.jpg');
+    background-size: cover;
+    color:red;
+}
